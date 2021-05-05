@@ -5,11 +5,10 @@ var ticketSchema = new Schema({
   seat_number: {
     type: String,
   },
-  booked: {
-    type: Boolean,
-    default: false,
+  seat_discription:{
+    type: String
   },
-  cancelled: {
+  booked: {
     type: Boolean,
     default: false,
   },
@@ -23,6 +22,6 @@ var ticketSchema = new Schema({
   },
 });
 
-var Tickets = mongoose.model("AllotedGift", ticketSchema);
+var Tickets = mongoose.model("Ticket", ticketSchema);
 
 module.exports = Tickets;

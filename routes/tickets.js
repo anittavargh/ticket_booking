@@ -1,21 +1,14 @@
-var express = require('express')
+var express = require("express");
 var router = express.Router();
 
 /** imports */
 
-const  allotedgiftsController = require('../controllers/MainController/DashboardController/AllotedGifts')
-const availablegiftsController = require('../controllers/MainController/DashboardController/AvailableGifts')
-const allocatenewgiftController = require('../controllers/MainController/DashboardController/AllocateNewGift');
-const setdeliveredController = require('../controllers/MainController/DashboardController/SetDelivered')
-const removegiftController = require('../controllers/MainController/DashboardController/RemoveGift')
+const addSeat = require("../controllers/add_seat");
+const bookTicket = require("../controllers/book_ticket");
+const cancelTicket = require("../controllers/cancel_ticket");
 
-
-router.get('/getall',allotedgiftsController.findAll)
-router.get('/availablegifts',availablegiftsController.availableGifts)
-router.post('/allocate/newgift',allocatenewgiftController.allocateNewGift)
-router.post('/set/delivered',setdeliveredController.setdelivered)
-router.post('/remove/gift',removegiftController.removegift);
-
-
+router.post("/add-seat", addSeat.add);
+router.post("/book", bookTicket.book);
+router.post("/cancel", cancelTicket.cancel);
 
 module.exports = router;

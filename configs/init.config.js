@@ -1,6 +1,6 @@
 const mongoose =  require('bluebird').promisifyAll(require('mongoose'));
 
-const URI = "mongodb+srv://scratchNwin:abcd1234@cluster0.ut6x8.mongodb.net/test";
+const URI = "mongodb+srv://test:test@cluster0.z0wnm.mongodb.net/test";
 
 (async () => {
     await mongoose.connect(URI, {
